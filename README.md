@@ -21,3 +21,13 @@ $ nvm use
 ```
 
 ## Docker
+
+There is a `docker-compose` file to run a mysql
+
+```
+$ docker-compose up
+```
+
+to access the database you can go to
+
+[Database](http://127.0.0.1:8080)
