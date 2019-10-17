@@ -37,11 +37,4 @@ export default (sequelize, Sequelize) => {
   return User;
 };
 
-// export default (sequelize, Sequelize) => {
-//   class User extends Model {}
-//   User.init({
-
-
-//   }, { sequelize });
-//   return User;
-// }
+// npx sequelize-cli model:generate --name User --attributes email:string,password:string,firstName:string,lastName:string,isDeleted:boolean

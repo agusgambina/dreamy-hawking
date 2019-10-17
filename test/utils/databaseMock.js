@@ -1,14 +1,15 @@
 "use strict";
 import Sequelize from 'sequelize';
+const path = require('path');
 
 const sequelize = new Sequelize(
-  'dreamyHawkingDb_test',
+  'dreamy_hawking_test',
   'root',
   'root', {
     host: '127.0.0.1',
     dialect: 'sqlite',
     logging: false,
-    storage: './test/data/dreamyHawkingDb_test.sqlite',
+    storage: path.resolve(__dirname, './../.data/dreamy_hawking_test.sqlite')
 });
 
 export default sequelize;

@@ -7,7 +7,7 @@ import sequelize from '../../../../utils/databaseMock';
 
 chai.use(chaiExclude);
 
-const users = sequelize.import('../../../../../src/sequelize/models/users');
+const users = sequelize.import('../../../../../src/sequelize/models/user');
 
 describe('users', function(){
   this.timeout(5000); 
@@ -17,7 +17,7 @@ describe('users', function(){
     return true;
   });
 
-  beforeEach(async function() {
+  beforeEach((done) => {
     users.destroy({
       where: {}
     }).then(function(msg) {
@@ -30,9 +30,10 @@ describe('users', function(){
       { id: 2, email: "user2@test.com", firstName: "Second", lastName: "Test User", password: "123456" },
       { id: 3, email: "user3@test.com", firstName: "Third", lastName: "Random", password: "123456" }
     ]).then(function(msg) {
+      done();
     })
     .catch(function(err) {
-        console.log('err =====================> ', err);
+        done(err);
     });
   });
 
